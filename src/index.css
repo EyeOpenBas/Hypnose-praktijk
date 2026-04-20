@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* LIGHT MODE */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+
+  --opaque-button-border-intensity: -8;
+
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  /* A calm, liminal palette: deep teal and soft gold/beige */
+  /* Background: softly warm off-white */
+  --background: 40 33% 97%;
+  --foreground: 180 30% 15%;
+
+  --border: 180 15% 85%;
+  --input: 180 15% 85%;
+  --ring: 184 35% 30%;
+
+  --card: 40 33% 99%;
+  --card-foreground: 180 30% 15%;
+  --card-border: 180 15% 90%;
+
+  --popover: 40 33% 99%;
+  --popover-foreground: 180 30% 15%;
+  --popover-border: 180 15% 90%;
+
+  /* Primary: Deep calm teal */
+  --primary: 184 45% 25%;
+  --primary-foreground: 40 33% 98%;
+
+  /* Secondary: Soft gold / warm sand */
+  --secondary: 35 40% 85%;
+  --secondary-foreground: 184 45% 20%;
+
+  --muted: 180 15% 92%;
+  --muted-foreground: 180 15% 45%;
+
+  --accent: 35 40% 88%;
+  --accent-foreground: 184 45% 20%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --radius: 0.25rem;
+
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+.dark {
+  --background: 184 50% 8%;
+  --foreground: 40 33% 95%;
+
+  --border: 184 30% 18%;
+  --input: 184 30% 18%;
+  --ring: 184 40% 40%;
+
+  --card: 184 45% 10%;
+  --card-foreground: 40 33% 95%;
+  --card-border: 184 30% 18%;
+
+  --popover: 184 45% 10%;
+  --popover-foreground: 40 33% 95%;
+  --popover-border: 184 30% 18%;
+
+  --primary: 35 50% 75%;
+  --primary-foreground: 184 50% 10%;
+
+  --secondary: 184 35% 15%;
+  --secondary-foreground: 35 40% 90%;
+
+  --muted: 184 30% 15%;
+  --muted-foreground: 184 20% 65%;
+
+  --accent: 184 35% 18%;
+  --accent-foreground: 35 50% 85%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 85% 96%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground transition-colors duration-500 selection:bg-primary selection:text-primary-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
