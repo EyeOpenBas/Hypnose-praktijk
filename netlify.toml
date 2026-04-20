@@ -1,0 +1,3 @@
+[build]
+  publish = "."
+  ignore = "exit 0"
