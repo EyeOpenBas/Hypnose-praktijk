@@ -8,7 +8,9 @@ export function Footer() {
           <div>
             <h3 className="font-serif text-2xl mb-6">De Droomreis</h3>
             <p className="text-primary-foreground/80 leading-relaxed max-w-sm">
-              Een veilige haven in Leimuiden voor blijvende verandering en innerlijke rust. Start jouw reis vandaag nog.
+              Een veilige haven in Leimuiden voor blijvende verandering en innerlijke rust. Start jouw reis vandaag nog.Onze praktijk in Leimuiden is centraal gelegen en goed 
+              bereikbaar vanuit Alphen aan den Rijn, Leiden, Nieuw-Vennep,Kaag en Braassem en Gouda. Veel cliënten reizen 15 tot 25 
+              minuten voor een sessie.
             </p>
           </div>
           
